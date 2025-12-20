@@ -1,0 +1,4 @@
+admin:admin:ADMIN
+librarian:librarian:LIBRARIAN
+reader:reader:READER
+

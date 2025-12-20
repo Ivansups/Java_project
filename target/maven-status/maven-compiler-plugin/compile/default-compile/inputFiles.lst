@@ -1,0 +1,12 @@
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/Main.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/gui/LibrarianWindow.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/gui/GuestCatalogWindow.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/auth/UserManager.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/gui/AdminWindow.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/model/Book.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/database/DatabaseManager.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/gui/ReaderWindow.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/util/UITheme.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/model/Loan.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/model/Reader.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/main/java/com/library/gui/LoginWindow.java
