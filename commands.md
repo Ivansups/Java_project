@@ -1,3 +1,4 @@
+## Ты должен быть в папке проекта
 ```bash
 mvn clean compile
 mvn exec:java -Dexec.mainClass="com.library.Main"
