@@ -1,5 +1,62 @@
 # Отчет по этапу «Кодирование и тестирование приложения»
 
+## Структура приложения (архитектура)
+- Архитектурный стиль: десктопное Swing-приложение с трехслойной логикой.
+- UI (Swing): `com.library.gui.*` — отдельные окна под роли (`LoginWindow`, `GuestCatalogWindow`, `ReaderWindow`, `LibrarianWindow`, `AdminWindow`), общая стилизация в `util.UITheme`.
+- Бизнес-логика: `auth.UserManager` (аутентификация и роли), `database.DatabaseManager` (CRUD для книг, читателей, пользователей, выдач; статистика; инициализация БД с тестовыми данными).
+- Модель данных: `model.Book`, `model.Reader`, `model.Loan` — POJO-объекты, отражающие строки таблиц и сущности предметной области.
+- Точка входа: `Main` — запуск приложения и первичная инициализация БД/окна логина.
+- Хранение данных: SQLite (`library.db` по умолчанию), автосоздание таблиц и тестовых записей при первом запуске.
+- Тестовая инфраструктура: `src/test/java` с `DatabaseTestHelper` (временная БД и сброс синглтонов) + JUnit/AssertJ/AssertJ Swing тесты.
+
+### PlantUML (общая структура)
+```plantuml
+@startuml
+title Library System (Swing + SQLite)
+
+package "UI (Swing)" {
+  class Main
+  class LoginWindow
+  class GuestCatalogWindow
+  class ReaderWindow
+  class LibrarianWindow
+  class AdminWindow
+}
+
+package "Logic" {
+  class UserManager
+  class DatabaseManager
+}
+
+package "Model" {
+  class Book
+  class Reader
+  class Loan
+}
+
+database "SQLite (library.db)" as DB
+
+Main --> LoginWindow
+LoginWindow --> GuestCatalogWindow : guest
+LoginWindow --> ReaderWindow : role=READER
+LoginWindow --> LibrarianWindow : role=LIBRARIAN
+LoginWindow --> AdminWindow : role=ADMIN
+
+LoginWindow --> UserManager
+GuestCatalogWindow --> DatabaseManager
+ReaderWindow --> DatabaseManager
+LibrarianWindow --> DatabaseManager
+AdminWindow --> DatabaseManager
+
+UserManager --> DatabaseManager : authenticate/getRole
+DatabaseManager --> DB : JDBC (SQLite)
+
+DatabaseManager --> Book
+DatabaseManager --> Reader
+DatabaseManager --> Loan
+@enduml
+```
+
 ## 1. Перечень требований к программному средству
 Использованы требования из этапа «Системный анализ» (сводка по ролям):
 - Гость: просмотр каталога, поиск по названию/автору, переход к авторизации.
