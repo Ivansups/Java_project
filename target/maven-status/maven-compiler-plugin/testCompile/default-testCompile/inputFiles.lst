@@ -1,0 +1,8 @@
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/model/ModelTests.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/gui/LoginWindowTest.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/database/DatabaseManagerReadersTest.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/gui/GuestCatalogWindowTest.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/database/DatabaseManagerUsersTest.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/database/DatabaseManagerBooksTest.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/testutil/DatabaseTestHelper.java
+/Users/ivanklimov/Documents/GitHub/Java_project/src/test/java/com/library/database/DatabaseManagerLoansTest.java

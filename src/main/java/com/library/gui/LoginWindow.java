@@ -32,8 +32,11 @@ public class LoginWindow extends JFrame {
         UITheme.applySberTheme(this);
 
         usernameField = new JTextField(20);
+        usernameField.setName("usernameField");
         passwordField = new JPasswordField(20);
+        passwordField.setName("passwordField");
         loginButton = new JButton("Войти");
+        loginButton.setName("loginButton");
 
         UITheme.styleTextField(usernameField);
         UITheme.stylePasswordField(passwordField);
@@ -115,6 +118,7 @@ public class LoginWindow extends JFrame {
         UITheme.styleButton(guestButton);
         guestButton.setBackground(UITheme.TEXT_SECONDARY);
         guestButton.setOpaque(true);
+        guestButton.setName("guestButton");
         guestButton.addActionListener(e -> {
             dispose();
             new GuestCatalogWindow().setVisible(true);

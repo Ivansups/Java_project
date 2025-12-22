@@ -39,9 +39,11 @@ public class GuestCatalogWindow extends JFrame {
             }
         };
         booksTable = new JTable(tableModel);
+        booksTable.setName("booksTable");
         UITheme.styleTable(booksTable);
 
         searchField = new JTextField(20);
+        searchField.setName("searchField");
         UITheme.styleTextField(searchField);
 
         JButton searchButton = new JButton("Поиск");
@@ -78,11 +80,13 @@ public class GuestCatalogWindow extends JFrame {
         searchPanel.add(new JLabel("Поиск:"));
         searchPanel.add(searchField);
         JButton searchBtn = new JButton("Поиск");
+        searchBtn.setName("searchButton");
         UITheme.styleButton(searchBtn);
         searchBtn.setOpaque(true);
         searchBtn.addActionListener(e -> performSearch());
         searchPanel.add(searchBtn);
         JButton showAllBtn = new JButton("Показать все");
+        showAllBtn.setName("showAllButton");
         UITheme.styleButton(showAllBtn);
         showAllBtn.setBackground(UITheme.TEXT_SECONDARY);
         showAllBtn.setOpaque(true);
@@ -90,6 +94,7 @@ public class GuestCatalogWindow extends JFrame {
         searchPanel.add(showAllBtn);
         searchPanel.add(Box.createHorizontalGlue());
         JButton loginBtn = new JButton("Войти в систему");
+        loginBtn.setName("loginNavButton");
         UITheme.styleButton(loginBtn);
         loginBtn.setOpaque(true);
         loginBtn.addActionListener(e -> {

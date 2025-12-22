@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseManager {
-    private static final String DB_URL = "jdbc:sqlite:library.db";
+    private static String DB_URL = System.getProperty("library.db.url", "jdbc:sqlite:library.db");
     private static DatabaseManager instance;
 
     private DatabaseManager() {
@@ -22,6 +22,14 @@ public class DatabaseManager {
             instance = new DatabaseManager();
         }
         return instance;
+    }
+
+    /**
+     * Позволяет тестам переключать БД и пересоздавать синглтон с чистыми данными.
+     */
+    public static synchronized void useCustomUrlForTests(String customUrl) {
+        DB_URL = customUrl;
+        instance = null;
     }
 
     private void initializeDatabase() {

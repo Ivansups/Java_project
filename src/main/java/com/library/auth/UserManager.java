@@ -50,6 +50,13 @@ public class UserManager {
         return dbManager.systemUserExists(username);
     }
 
+    /**
+     * Сброс синглтона для тестов, чтобы он подхватил новое состояние БД.
+     */
+    public static synchronized void resetForTests() {
+        instance = null;
+    }
+
     public static class User {
         private String username;
         private String password;

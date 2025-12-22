@@ -1,0 +1,8 @@
+com/library/database/DatabaseManagerLoansTest.class
+com/library/database/DatabaseManagerBooksTest.class
+com/library/model/ModelTests.class
+com/library/testutil/DatabaseTestHelper.class
+com/library/gui/LoginWindowTest.class
+com/library/database/DatabaseManagerUsersTest.class
+com/library/gui/GuestCatalogWindowTest.class
+com/library/database/DatabaseManagerReadersTest.class
