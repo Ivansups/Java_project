@@ -43,7 +43,7 @@ class DatabaseManagerUsersTest {
 
     @Test
     void systemUserExistsBecomesFalseAfterDelete() {
-        dbManager.addSystemUser("delete_me", "pwd", "LIBRARIAN");
+        dbManager.addSystemUser("delete_me", "pwd", "READER");
         assertThat(dbManager.systemUserExists("delete_me")).isTrue();
 
         dbManager.deleteSystemUser("delete_me");

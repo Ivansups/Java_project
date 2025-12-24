@@ -8,10 +8,12 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class DatabaseManager {
     private static String DB_URL = System.getProperty("library.db.url", "jdbc:sqlite:library.db");
     private static DatabaseManager instance;
+    private static final Set<String> ALLOWED_ROLES = Set.of("ADMIN", "READER");
 
     private DatabaseManager() {
         initializeDatabase();
@@ -193,14 +195,7 @@ public class DatabaseManager {
         addSystemUser("admin", "admin", "ADMIN");
         addSystemUser("admin1", "admin123", "ADMIN");
         addSystemUser("root", "root", "ADMIN");
-        
-        // Библиотекари
-        addSystemUser("librarian", "librarian", "LIBRARIAN");
-        addSystemUser("librarian1", "lib123", "LIBRARIAN");
-        addSystemUser("librarian2", "lib456", "LIBRARIAN");
-        addSystemUser("maria", "maria123", "LIBRARIAN");
-        addSystemUser("ivan", "ivan123", "LIBRARIAN");
-        
+
         // Читатели
         addSystemUser("reader", "reader", "READER");
         addSystemUser("reader1", "read123", "READER");
@@ -672,6 +667,9 @@ public class DatabaseManager {
     // ========== USERS (Системные пользователи) ==========
 
     public void addSystemUser(String username, String password, String role) {
+        if (!ALLOWED_ROLES.contains(role)) {
+            throw new IllegalArgumentException("Недопустимая роль: " + role + ". Разрешены: " + ALLOWED_ROLES);
+        }
         String sql = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
         try (Connection conn = DriverManager.getConnection(DB_URL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -738,6 +736,9 @@ public class DatabaseManager {
     }
 
     public void updateSystemUser(String username, String newPassword, String newRole) {
+        if (!ALLOWED_ROLES.contains(newRole)) {
+            throw new IllegalArgumentException("Недопустимая роль: " + newRole + ". Разрешены: " + ALLOWED_ROLES);
+        }
         String sql = "UPDATE users SET password = ?, role = ? WHERE username = ?";
         try (Connection conn = DriverManager.getConnection(DB_URL);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

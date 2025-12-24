@@ -1020,7 +1020,7 @@ public class AdminWindow extends JFrame {
 
         JTextField usernameField = new JTextField(20);
         JPasswordField passwordField = new JPasswordField(20);
-        JComboBox<String> roleCombo = new JComboBox<>(new String[]{"ADMIN", "LIBRARIAN", "READER"});
+        JComboBox<String> roleCombo = new JComboBox<>(new String[]{"ADMIN", "READER"});
 
         UITheme.styleTextField(usernameField);
         UITheme.stylePasswordField(passwordField);
@@ -1104,7 +1104,7 @@ public class AdminWindow extends JFrame {
         JLabel usernameLabel = new JLabel("Логин: " + username);
         UITheme.styleLabel(usernameLabel);
         JPasswordField passwordField = new JPasswordField(20);
-        JComboBox<String> roleCombo = new JComboBox<>(new String[]{"ADMIN", "LIBRARIAN", "READER"});
+        JComboBox<String> roleCombo = new JComboBox<>(new String[]{"ADMIN", "READER"});
         roleCombo.setSelectedItem(role);
 
         UITheme.stylePasswordField(passwordField);

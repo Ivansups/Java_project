@@ -9,13 +9,6 @@
 - `admin1` / `admin123` / ADMIN
 - `root` / `root` / ADMIN
 
-### Библиотекари (5 пользователей)
-- `librarian` / `librarian` / LIBRARIAN
-- `librarian1` / `lib123` / LIBRARIAN
-- `librarian2` / `lib456` / LIBRARIAN
-- `maria` / `maria123` / LIBRARIAN
-- `ivan` / `ivan123` / LIBRARIAN
-
 ### Читатели (10 пользователей)
 - `reader` / `reader` / READER
 - `reader1` / `read123` / READER
@@ -28,7 +21,7 @@
 - `morozov` / `morozov123` / READER
 - `sokolov` / `sokolov123` / READER
 
-**Всего: 18 пользователей**
+**Всего: 13 пользователей**
 
 ## Читатели библиотеки
 
@@ -138,7 +131,7 @@
 
 ## Итого тестовых данных
 
-- **18 пользователей системы** (учетные записи для входа)
+- **13 пользователей системы** (учетные записи для входа: ADMIN/READER)
 - **20 читателей библиотеки** (клиенты с персональными данными)
 - **57 книг** различных жанров
 

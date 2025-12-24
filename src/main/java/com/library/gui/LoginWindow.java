@@ -167,9 +167,6 @@ public class LoginWindow extends JFrame {
                 case "ADMIN":
                     new AdminWindow(username).setVisible(true);
                     break;
-                case "LIBRARIAN":
-                    new LibrarianWindow(username).setVisible(true);
-                    break;
                 case "READER":
                     new ReaderWindow(username).setVisible(true);
                     break;
